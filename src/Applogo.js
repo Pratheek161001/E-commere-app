@@ -2,7 +2,7 @@ import React from 'react'
 
 const Applogo = () => {
   return (
-    <div>The Generics</div>
+    <div style={{textAlign:'center', fontSize:'50px',fontFamily:'cursive',fontWeight:'bold', color:'#0d6efd',backgroundColor:'beige'}}>The Generics</div>
   )
 }
 
