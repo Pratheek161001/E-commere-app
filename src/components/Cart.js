@@ -21,7 +21,10 @@ function Example() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const placeorder=(e)=>{
+    e.preventDefault();
+    alert('Your order is placed....Thank you!!!')
+  }
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -46,6 +49,7 @@ function Example() {
         </div>
             </ul>
         </Offcanvas.Body>
+        <Button variant="primary" onClick={placeorder}>Place Order</Button>
       </Offcanvas>
     </>
   );
