@@ -1,10 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
+import Example from './Cart';
 
 
-function BasicExample() {
+function Navbartop() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -17,10 +17,10 @@ function BasicExample() {
             <Nav.Link href="#About">About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Button variant="primary" className="mr-3">Cart 0</Button>
+        <Example/>
       </Container>
     </Navbar>
   );
 }
 
-export default BasicExample;
+export default Navbartop;
