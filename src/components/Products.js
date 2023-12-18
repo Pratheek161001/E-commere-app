@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext} from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/esm/Container';
+import { CartContext } from './CartContext';
 
 const Products = () => {
+    const { addToCart } = useContext(CartContext);
     const productsArr = [
         {
             title: 'Colors',
@@ -21,10 +23,8 @@ const Products = () => {
             title: 'Blue Color',
             price: 100,
             imageUrl: require("../assets/Album 4.png")},
-        ]
-        
+        ]     
   return (
-    
     <Container>
         <div className="d-flex flex-wrap justify-content-center align-items-center">
         {productsArr.map((product,index)=>(
@@ -33,13 +33,15 @@ const Products = () => {
                 <Card.Body>
                     <Card.Title>{product.title}</Card.Title>
                     <Card.Text>${product.price}</Card.Text>
-                    <Button variant="primary">Add to cart</Button>
+                    <Button variant="primary"onClick={(e)=>{
+                        e.preventDefault()
+                        addToCart({title:product.title,price:product.price,imageUrl:product.imageUrl})
+                    }}>Add to cart</Button>
                 </Card.Body>
             </Card>
         ))}
         </div>
-    </Container>
-    
+    </Container>  
   )
 }
 
